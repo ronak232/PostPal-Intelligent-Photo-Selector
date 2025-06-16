@@ -8,14 +8,21 @@ header {
   font-weight: 400;
   font-style: normal;
   font-size: 2rem;
-  color: darkseagreen;
+  color: rgb(143, 184, 188);
 }
+
 .navbar .login-btn {
   font-size: 14px;
   overflow: hidden;
   font-family: "Playfair Display SC", serif;
   font-weight: 600;
   color: #030637;
+}
+
+.navbar .login-dropdown a {
+  font-family: var(--font-family-sansista);
+  color: #030637;
+  font-size: 1.2rem;
 }
 
 .post-pal-container {

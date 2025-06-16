@@ -26,16 +26,12 @@ export default function App() {
   };
 
   const PrivateRoutes = ({ children }) => {
-    return localStorage.getItem("user") ? (
-      children
-    ) : (
-      <Navigate to={"/login"} replace />
-    );
+    return user ? children : <Navigate to={"/login"} replace />;
   };
 
   return (
     <>
-      <Navbar user={user}/>
+      <Navbar user={user} setUser={setUser} />
       <Routes>
         <Route
           path="/login"
@@ -48,7 +44,11 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/dashboard"
-          element={<PrivateRoutes children={<Dashboard />} />}
+          element={
+            <PrivateRoutes>
+              <Dashboard />
+            </PrivateRoutes>
+          }
         />
       </Routes>
     </>

@@ -1,18 +1,12 @@
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+
 import { baseURL } from "../constant/variables";
 
 function Login({ setUser }) {
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    const userInfo = localStorage.getItem("user");
-    if (userInfo) {
-      navigate("/dashboard", { replace: true }); // prevents going back to /login
-    }
-  }, [navigate]);
+
+
 
   const handleGoogleLogin = async (authResponse) => {
     try {
